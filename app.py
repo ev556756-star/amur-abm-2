@@ -45,7 +45,7 @@ if page=='Карта и прогноз':
     l,r=st.columns([1.4,1])
     with l:
         df=pd.DataFrame({'mo':mos,'population':[pop(m,year) for m in mos]})
-        fig=px.choropleth_map(df,geojson=geo,locations='mo',featureidkey='properties.NAME',color='population',hover_name='mo',mapbox_style='carto-positron',zoom=4.6,center={'lat':52.6,'lon':127.5},opacity=.7,color_continuous_scale=['#aee8ff','#4bd7ff','#00aeff','#0255ff'])
+        fig=px.choropleth_map(df,geojson=geo,locations='mo',featureidkey='properties.NAME',color='population',hover_name='mo',map_style='carto-positron',zoom=4.6,center={'lat':52.6,'lon':127.5},opacity=.7,color_continuous_scale=['#aee8ff','#4bd7ff','#00aeff','#0255ff'])
         fig.update_traces(marker_line_color='#00aeff',marker_line_width=1)
         fig.update_layout(height=550,margin=dict(l=0,r=0,t=0,b=0),paper_bgcolor='#041735',font_color='white')
         st.plotly_chart(fig,use_container_width=True)
